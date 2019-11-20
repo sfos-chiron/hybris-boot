@@ -141,7 +141,7 @@ $(LOCAL_BUILT_MODULE): $(INSTALLED_KERNEL_TARGET) $(BOOT_RAMDISK) $(MKBOOTIMG) $
 	@echo "Making hybris-boot.img in $(dir $@) using $(INSTALLED_KERNEL_TARGET) $(BOOT_RAMDISK)"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
-	$(hide)$(MKBOOTIMG) --ramdisk $(BOOT_RAMDISK) $(HYBRIS_BOOTIMAGE_ARGS) $(BOARD_MKBOOTIMG_ARGS) --output $@
+	$(hide)$(MKBOOTIMG) --ramdisk $(BOOT_RAMDISK) $(HYBRIS_BOOTIMAGE_ARGS) $(BOARD_MKBOOTIMG_ARGS) --os_version 9 --os_patch_level 2019-10-01 --output $@
 
 $(BOOT_RAMDISK): $(BOOT_RAMDISK_FILES) $(BB_STATIC)
 	@echo "Making initramfs : $@"
